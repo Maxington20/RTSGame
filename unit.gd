@@ -18,8 +18,12 @@ func _ready():
 	agent = $NavigationAgent2D
 	sprite = $Sprite
 	
-	var gm = get_node("/route")
+	var gm = get_node("/root/Main")
 	
+	if is_player:
+		gm.players.append(self)
+	else:
+		gm.enemies.append(self)
 	
 	
 	
